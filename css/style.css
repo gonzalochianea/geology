@@ -5,7 +5,7 @@
     padding: 0;  /* Elimina el espacio interno que los navegadores ponen por defecto */
     
     /* 'border-box' hace que si defines un ancho de 100px, el padding y el borde se queden ADENTRO de esos 100px. 
-       Sin esto, el padding agrandaría el elemento y rompería tu diseño. */
+        Sin esto, el padding agrandaría el elemento y rompería tu diseño. */
     box-sizing: border-box; 
 }
 
@@ -115,10 +115,6 @@ article ul li {
     width: 100%;       /* Intenta ocupar todo el ancho del contenedor */
     max-width: 450px;  /* No permite que la imagen crezca más de 450px para que no se vea gigante */
     height: 300px;     /* Forzamos una altura fija para que todas las fotos de rocas se vean alineadas */
-    
-    /* 'object-fit: cover' es vital: hace que la imagen se recorte para llenar el espacio sin estirarse ni verse "aplastada" */
-    object-fit: cover; 
-    
     border: 3px solid #78993b; 
     border-radius: 10px;
     
@@ -171,12 +167,20 @@ input, select, textarea {
     margin-top: 5px;
     border-radius: 5px;
     border: 1px solid gray;
+    display: block; /* Asegura que cada campo empiece en su propia línea */
 }
 
 /* ':focus' se activa cuando haces clic dentro del cuadro para empezar a escribir */
 input:focus, textarea:focus {
     border: 3px solid #a5d63f; /* Cambia el color del borde para indicar dónde estás escribiendo */
     outline: none; /* Quita el borde azul o negro que el navegador pone por defecto */
+}
+
+/* Nuevo contenedor para separar los botones del textarea y evitar que se encimen */
+.botones-contenedor {
+    margin-top: 25px; /* Empuja los botones hacia abajo */
+    display: block;
+    clear: both; /* Limpia cualquier flujo anterior */
 }
 
 button {
